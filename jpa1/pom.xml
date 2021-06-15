@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>jpa1</groupId>
+  <artifactId>jpa1</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+ <!-- Hibernate JPA --> 
+ <dependency>
+ <groupId>org.hibernate</groupId>
+ <artifactId>hibernate-core</artifactId>
+ <version>5.3.7.Final</version>
+ </dependency>
+ <dependency>
+ <groupId>org.hibernate</groupId>
+ <artifactId>hibernate-entitymanager</artifactId>
+ <version>5.3.7.Final</version>
+ </dependency>
+ <dependency>
+   <groupId>org.hibernate.javax.persistence</groupId>
+    <artifactId>hibernate-jpa-2.2-api</artifactId>
+    <version>1.0.0.Beta2</version>
+ </dependency>
+  <dependency>
+       <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-validator</artifactId>
+         <version>5.1.3.Final</version>
+   </dependency>
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+      
+        
+ <dependency>
+ <groupId>org.slf4j</groupId>
+ <artifactId>slf4j-api</artifactId>
+ <version>1.7.25</version>
+ </dependency>
+ <!-- DbUnit --> 
+ <dependency>
+ <groupId>org.dbunit</groupId>
+ <artifactId>dbunit</artifactId>
+ <version>2.5.0</version>
+ </dependency>
+ <!-- Driver Postgres --> 
+<dependency>
+ <groupId>org.postgresql</groupId>
+ <artifactId>postgresql</artifactId>
+ <version>42.2.5</version>
+</dependency>
+ </dependencies>
+  
+  
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/java</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
