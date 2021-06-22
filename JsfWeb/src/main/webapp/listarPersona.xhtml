@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+<title>Personas Lista</title>
+</h:head> 
+<body>
+<h:form>
+<ul>
+	<ui:repeat var="persona" value="#{personasController.personas}">
+	<li>
+		<h:outputText value="#{persona}"/>
+	</li>
+	</ui:repeat>
+</ul>
+
+<ul>
+	<ui:repeat var="ciudad" value="#{ciudadontroller.personas}">
+	<li>
+		<h:outputText value="#{persona}"/>
+	</li>
+	</ui:repeat>
+</ul>
+
+</h:form>
+ 
+<br></br>
+
+<h:link outcome="registrarPersona" value="Registrar" style="margin-right:20px;"/>
+
+</body> 
+</html>

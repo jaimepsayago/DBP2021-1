@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>Registro de Persona</h:head> 
+<body> 
+<h1>Registro de Persona</h1>
+		
+		<h:form>
+		
+		<label>Identificación</label>
+		<h:inputText value= "#{personaController.identificacion}"/>
+		<label>Nombres</label>
+		<h:inputText value="#{personaController.nombre}" />
+		<label>Apellidos</label>
+		<h:inputText value="#{personaController.apellido}" />
+		
+		
+		<label>Ciudad</label>
+		<h:inputText value="#{personaController.ciudad}" />
+		<label>Direccion</label>
+		<h:inputText value="#{personaController.direccion}" />
+		<label>Telefono</label>
+		<h:inputText value="#{personaController.telefono}" />
+		<div>
+		
+		<h:commandButton action="#{personaController.registrar}" value="Registrar" />
+		<input type="reset" value="Restablecer" />
+		</div>
+		</h:form>
+
+</body> 
+</html>
