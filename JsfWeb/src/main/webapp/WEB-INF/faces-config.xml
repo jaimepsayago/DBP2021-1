@@ -11,14 +11,21 @@ version="2.3">
    <from-outcome>registrarPersona</from-outcome>
    <to-view-id>/persona.xhtml</to-view-id>
   </navigation-case>
+  </navigation-rule>
   
-   </navigation-rule>
+   <navigation-rule>
+  <from-view-id>/listarPersonaPrimefaces.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>registrarPersona</from-outcome>
+   <to-view-id>/persona.xhtml</to-view-id>
+  </navigation-case>
+  </navigation-rule>
    
    <navigation-rule>
   <from-view-id>/persona.xhtml</from-view-id>
   <navigation-case>
    <from-outcome>registrado</from-outcome>
-   <to-view-id>/listarPersona.xhtml</to-view-id>
+   <to-view-id>/listarPersonaPrimefaces.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
 

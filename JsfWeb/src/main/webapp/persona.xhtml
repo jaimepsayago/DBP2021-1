@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
 <h:head>Registro de Persona</h:head> 
 <body> 
@@ -24,7 +25,16 @@
 		<h:inputText value="#{personaController.direccion}" />
 		<label>Telefono</label>
 		<h:inputText value="#{personaController.telefono}" />
+		
+	
+                
 		<div>
+		
+		 	<p:selectOneMenu id="option" value="#{personaController.anioNacimiento}">
+                    <f:selectItem itemLabel="Select One" itemValue=""/>
+                    <f:selectItems value="#{personaController.anios}"/>
+                    
+                </p:selectOneMenu>      
 		
 		<h:commandButton action="#{personaController.registrar}" value="Registrar" />
 		<input type="reset" value="Restablecer" />

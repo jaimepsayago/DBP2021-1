@@ -11,6 +11,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import puce.web.model.Persona;
+import puce.web.model.PersonaLombok;
 import puce.web.util.MemoryStore;
 
 @Named
@@ -67,6 +68,14 @@ public class PersonaController {
 		}
 	}
 	
+	//metodo utilizando lombok
+	public void imprimirDatos() {
+		PersonaLombok p1 = new PersonaLombok();
+		p1.setIdentificacion("0301425");
+		p1.setNombre("juan");
+		p1.toString();
+		
+	}
 	
 	//metodo para guardar las personas
 	
