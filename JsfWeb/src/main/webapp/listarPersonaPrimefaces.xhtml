@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+<title>Personas Lista</title>
+<h:outputStylesheet name="css/site.css"></h:outputStylesheet>
+</h:head> 
+<body>
+<h:form>
+    <div class="card">
+        <p:dataTable var="persona" value="#{personasController.personas}">
+            <p:column headerText="Identificacion">
+                <h:outputText value="#{persona.identificacion}" />
+            </p:column>
+
+            <p:column headerText="Nombre">
+                <h:outputText value="#{persona.nombre}" />
+            </p:column>
+
+            <p:column headerText="Apellido">
+                <h:outputText value="#{persona.apellido}" />
+            </p:column>
+
+            <p:column headerText="Telefono">
+                <h:outputText value="#{persona.telefono}" />
+            </p:column>
+            
+             <p:column headerText="edad">
+                <h:outputText value="#{persona.edad}" />
+            </p:column>
+            
+        </p:dataTable>
+    </div>
+</h:form>
+ 
+<br></br>
+
+<p:linkButton outcome="registrarPersona" value="Registrar" style="margin-right:20px;"/>
+
+</body> 
+</html>
