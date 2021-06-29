@@ -1,12 +1,12 @@
 package puce.web.model;
 
-import lombok.AllArgsConstructor;
+import lombok.AllArgsConstructor; 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /*
  * data = getters and setters/ construtores uno vacio y otro con todas la variables / equals / hashcode / toStribng
- * 
+ * dfdadfads
  */
 
 @Data  @AllArgsConstructor @NoArgsConstructor
