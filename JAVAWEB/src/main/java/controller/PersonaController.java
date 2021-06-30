@@ -1,12 +1,15 @@
 package controller;
 
+
 import java.io.Serializable;
 
 import javax.enterprise.context.*;
+import javax.faces.event.ActionEvent;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.servlet.jsp.tagext.TryCatchFinally;
 
 import dao.PersonaService;
 import model.Persona;
@@ -37,6 +40,46 @@ public class PersonaController implements Serializable{
 		if(persona == null) {
 			persona = new Persona();
 		}
+	}
+	
+	//guardar
+	public String guardar() {
+		try {
+			System.out.println("service: " + personaService);
+			personaService.save(persona);
+			
+			
+		} catch (Exception e) {
+			System.out.print("error" + e.getMessage());
+			return "";
+		}
+		return "listarPersonaPrimefaces";
+	}
+	
+	//editar
+	public void editar() {
+		if(idSeleccionado == null) {
+			return;
+		}
+		persona = personaService.find(idSeleccionado);
+	}
+	
+	//eliminar
+	public String remover(ActionEvent e) {
+		try {
+			persona = new Persona();
+			String i = e.getComponent().getAttributes().get("itemEliminar").toString(); //obtener parametro desde datatable
+			Long l  = new Long(i); //conversion
+			persona.setId(l);
+			personaService.remove(persona);
+			
+		} catch (Exception e2) {
+			System.out.println(e2.getMessage());
+			return "";
+		}
+		return "listarPersonaPrimefaces";
+		
+	
 	}
 
 	public Persona getPersona() {
