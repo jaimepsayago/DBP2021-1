@@ -53,7 +53,7 @@ public class PersonaController implements Serializable{
 			System.out.print("error" + e.getMessage());
 			return "";
 		}
-		return "listarPersonaPrimefaces";
+		return "listaPersona";
 	}
 	
 	//editar
