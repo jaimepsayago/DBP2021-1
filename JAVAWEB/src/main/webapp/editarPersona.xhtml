@@ -5,12 +5,85 @@
       xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-<title>Agregar Persona</title>
+<title>Editar Persona</title>
 <h:outputStylesheet name="css/site.css"></h:outputStylesheet>
 </h:head> 
 <body>
 
+<f:metadata>
+	<f:viewParam name="id" value="#{personaController.idSeleccionado}"/>
+		<f:event type="preRenderView" listener="#{personaController.editar}"/>
+</f:metadata>
 	
+	<h:form styleClass="form-horizontal">
+	
+			<fieldset>
+			<legend>
+				
+					<h:outputText value="Editar" />
+					
+				
+			</legend>
+			
+			
+	<h:inputHidden value="#{personaController.persona.id}" />
+<div class="control-group">	
+	<label class="control-label">
+	<h:outputText value="nombre" /></label>
+	
+	<div class="controls">
+		<h:inputText value="#{personaController.persona.nombre}"
+			label="Descripción" required="true"
+			styleClass="input-large">
+			<f:validateLength minimum="5" maximum="60" />
+		</h:inputText>
+	</div>
+		
+    <label class="control-label">
+    
+    <h:outputText value="apellido" /></label>
+				<div class="controls">
+					<h:inputText value="#{personaController.persona.apellido}"
+						label="Descripción" required="true"
+						styleClass="input-large">
+						<f:validateLength minimum="5" maximum="60" />
+					</h:inputText>
+				</div>
+	<label class="control-label">
+	<h:outputText value="edad" /></label>
+				<div class="controls">
+					<h:inputText value="#{personaController.persona.edad}"
+						label="Descripción" required="true"
+						styleClass="input-large">
+						<f:validateLength minimum="1" maximum="60" />
+					</h:inputText>
+				</div>
+				
+			</div>
+		
+	</fieldset>
+	
+		<div class="control-group">
+			<div class="controls">
+			<p:commandButton value="Guarar"
+				action="listarPersonaPrimefaces?faces-redirect=true"
+				actionListener="#{personaController.guardar()}" 
+				styleClass="btn btn-success" onclick="dlg.show();" oncomplete="dlg.hide();"
+			/>
+			<p:button value="Cancelar"
+					outcome="listarPersonaPrimefaces" styleClass="btn" />
+				
+			</div>
+		</div>
+		
+		<p:dialog id="dialog" header="Guardar" widgetVar="dlg" dynamic="true" modal="true">  
+	    	<h:outputText value="Guardar" />  
+		</p:dialog>
+		
+		
+		<p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
+				
+</h:form>
 
 <br></br>
 

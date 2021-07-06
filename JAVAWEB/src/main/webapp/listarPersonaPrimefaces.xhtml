@@ -37,16 +37,21 @@
 					<p:toolbarGroup align="right">
 						<p:menuButton value="Opciones">
 							<p:menuitem value="Modificar">
-															
-					
-							
+								
+								<h:link outcome="editarPersona" value="Editar"
+								title="Editar #{persona.id}">
+								<f:param name="id" value="#{persona.id}"/>
+												
+								
+								</h:link>							
+								
 							</p:menuitem>
 							
-							<p:menuitem value="Eliminar" action="listarPersonaPrimefaces"
+							<p:menuitem value="Eliminar" action="listarPersonaPrimefaces.jsf"
 								onclick="if (!confirm('Esta seguro de eliminar esta fila?')) return false"
 								actionListener="#{personaController.remover}" update="datatable"
 								ajax="true" >
-								<f:attribute name="itemEliminar" value="#{u.id}">
+								<f:attribute name="itemEliminar" value="#{persona.id}">
 								
 								</f:attribute>
 							</p:menuitem>

@@ -61,6 +61,7 @@ public class PersonaController implements Serializable{
 		if(idSeleccionado == null) {
 			return;
 		}
+		//buscar persona por id
 		persona = personaService.find(idSeleccionado);
 	}
 	
