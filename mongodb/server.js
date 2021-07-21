@@ -1,5 +1,8 @@
 /**
  * primera aplicacion en nodejs
+
+mongodb ---servidor web--- linux ---> contenedor(mongodb) 
+
  */
 'use strict'
 //cargar modulos y importar paquetes
