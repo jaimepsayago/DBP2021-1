@@ -13,7 +13,15 @@ var api = express.Router();
 
 //generamos una funcion para llamar al controlador
 api.get('/prueba/:nombre?', employeeController.prueba);
+//obtener todos
 api.get('/employees/', employeeController.getEmployees);
-
+//buscar un empleado por id
+api.get('/employee/:id',employeeController.getEmployee);
+//guardar
+api.post('/employee',employeeController.saveEmployee);
+//editar
+api.put('/employee',employeeController.updateEmployee);
+//eliminar
+api.delete('/employee/:id',employeeController.deleteEmployee);
 //exportar la ruta
 module.exports=api;

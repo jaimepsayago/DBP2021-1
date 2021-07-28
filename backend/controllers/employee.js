@@ -40,12 +40,64 @@ function getEmployees(req, res){
 	});
 }
 
+//obtener un dato es decir buscar
+function getEmployee(req, res){
+	//viene desde el http desde la pagina web
+	var id = req.params.id;
+	res.status(200).send({data:id});
+	
+	
+}
+
+
+//guardar datos
+
+function saveEmployee(req, res){
+	var employee = new Employee();
+	
+	//body = cuerpo de la pagina web 
+	//post y params lo convierte en JSON
+	var params = req.body;
+	
+	employee.name = params.name;
+	employee.email = params.email;
+	employee.designation = params.designation;
+	employee.phoneNumber = params.phoneNumber;
+	
+	employee.save((err, employeeStored)=>{
+		if(err){
+			res.status(500).send({message:'error al guardar el dato'});
+		}
+		res.status(200).send({employee:employeeStored});
+		
+	});
+	
+}
+
+//editar datos
+function updateEmployee(req, res){
+	var id = req.params.id;
+	var params = req.body;
+	
+	res.status(200).send({update:true, employee:params});
+	
+}
+//eliminar
+function deleteEmployee(req,res){
+	var id = req.params.id;
+	res.status(200).send({delete:true,data:id});
+}
+
 
 
 //exportar al modulo a objeto
 module.exports={
 	prueba,
-	getEmployees
+	getEmployees,
+	getEmployee,
+	saveEmployee,
+	updateEmployee,
+	deleteEmployee
 }
 
 
