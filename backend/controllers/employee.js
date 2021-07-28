@@ -79,7 +79,15 @@ function updateEmployee(req, res){
 	var id = req.params.id;
 	var params = req.body;
 	
-	res.status(200).send({update:true, employee:params});
+	Employee.findByIdAndUpdate(id, params, (err, employeeUpdate)=>{
+		if(err){
+			res.status(500).send({message:'error de actualizacion'});
+		}
+		res.status(200).send({employee:employeeUpdate});
+		
+	})
+	
+	
 	
 }
 //eliminar

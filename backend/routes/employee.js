@@ -20,7 +20,7 @@ api.get('/employee/:id',employeeController.getEmployee);
 //guardar
 api.post('/employee',employeeController.saveEmployee);
 //editar
-api.put('/employee',employeeController.updateEmployee);
+api.put('/employee/:id',employeeController.updateEmployee);
 //eliminar
 api.delete('/employee/:id',employeeController.deleteEmployee);
 //exportar la ruta
