@@ -79,6 +79,14 @@ function updateEmployee(req, res){
 	var id = req.params.id;
 	var params = req.body;
 	
+	console.log(params);
+	//vamos abuscar el objeto
+	//va a recibir el parametro
+	//el obj update con los datos a modificasr
+	//y una funcion flecha para recibir el favorito updateo o un err
+	
+	//Employee.findOneAndUpdate
+	
 	Employee.findByIdAndUpdate(id, params, (err, employeeUpdate)=>{
 		if(err){
 			res.status(500).send({message:'error de actualizacion'});
@@ -92,10 +100,28 @@ function updateEmployee(req, res){
 }
 //eliminar
 function deleteEmployee(req,res){
-	var id = req.params.id;
-	res.status(200).send({delete:true,data:id});
-}
+var id = req.params.id;
+Employee.findByIdAndDelete(id, function(err,employee){
+	if(err){
+			res.status(500).send({message: 'error al eliminar dato'});
+		}
+	if(!employee){
+			res.status(404).send({message: 'no existen datos'});
+		}else{
+			employee.remove(err =>{
+				if(err){
+					res.status(500).send({message: 'error al eliminar dato'});
+				}else{
+					res.status(200).send({message: 'dato borrado exito'});
+				}
 
+			});
+
+		}
+
+		
+	});
+}
 
 
 //exportar al modulo a objeto
